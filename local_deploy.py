@@ -1,7 +1,5 @@
 import streamlit as st
 import tensorflow as tf
-import yaml
-import torch
 
 @st.cache_resource
 def load_model():
