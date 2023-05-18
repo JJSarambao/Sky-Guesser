@@ -7,7 +7,7 @@ def load_model():
   return model
 
 model = load_model()
-classes = {0: 'Cloudy', 1: 'Rain', 2: 'Shine', 3: 'Sunrise'}
+classes = {0: 'Cloudy', 1: 'Rainy', 2: 'Shiny', 3: 'Sunrise'}
 
 st.write("""
 # Weather Classification System"""
@@ -31,6 +31,6 @@ else:
     st.image(image,use_column_width=True)
     prediction=import_and_predict(image,model)
     class_names= classes
-    string = f"Hmm.. looks like {class_names[np.argmax(prediction)]} to me!"
+    string = f"Hmm.. looks like {class_names[np.argmax(prediction)]} sky to me!"
     # string="OUTPUT : "+class_names[np.argmax(prediction)]
     st.success(string)
