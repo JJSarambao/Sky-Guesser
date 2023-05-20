@@ -22,7 +22,7 @@ def say_something(class_val):
                    1: ["N.. not a good time for a walk", "You.. you can go out and play in the rain if you want", "Make sure you have your umbrellas today!", "Take care! Roads and sidewalks may get slippery at times.", "A great day for a hot soup, isn't it?"],
                    2: ["Shiiiiiiiiny~!", "What a nice time to walk outside.", "It might get too hot, make sure you're hydrated!", "Take an umbrella with you, its for the better", "AH-- I'M BURNING-- wait, I'm not a mob from Minecraft.","A great time for a nice cold glass of juice. Or water. Or tea. Anything. Just drink."],
                    3: ["Wake up, sleepy head.", "A nice new start for the day! Do your best!", "YOU'RE GONNA BE LATE! YOU'RE GONNA BE-- nah, I'm just kidding, prepare at your own pace.", "Rise and Shine! No, don't do that literally--"]}
-    return rand.randchoice(what_to_say[class_val])
+    return rand.choice(what_to_say[class_val])
 
 file=st.file_uploader("Show me your sky!",type=["jpg","png"])
 import cv2
