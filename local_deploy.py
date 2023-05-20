@@ -1,6 +1,6 @@
 import streamlit as st
 import tensorflow as tf
-import rand
+import random as rand
 
 @st.cache_resource
 def load_model():
