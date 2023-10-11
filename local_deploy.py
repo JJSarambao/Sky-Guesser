@@ -1,6 +1,5 @@
 import random as rand
 
-import cv2
 import numpy as np
 import streamlit as st
 import tensorflow as tf
@@ -84,5 +83,5 @@ else:
     string = f"Hmm.. looks like {class_names[np.argmax(prediction)]} sky to me! {say_something(np.argmax(prediction))}"
     st.success(string)
     st.info(
-        "I should have uploaded a YOLOv5 model actually. Thing is.. I have problems making it work outside the YOLOv5 folder :("
+        "I should have a YOLOv5 model actually. I just have problems making it work outside the YOLOv5 folder :("
     )
