@@ -50,7 +50,7 @@ def say_something(class_val):
             "A nice new start for the day! Do your best!",
             "YOU'RE GONNA BE LATE! YOU'RE GONNA BE-- nah, I'm just kidding, prepare at your own pace.",
             "Rise and Shine! No, don't do that literally--",
-        ], 
+        ],
     }
     return rand.choice(what_to_say[class_val])
 
