@@ -1,0 +1,22 @@
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Code Checking for Python ${{ matrix.python-version }}
+      uses: github/super-linter@v4
+      env:
+        DEFAULT_BRANCH: production
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VALIDATE_ALL_CODEBASE: false
+        VALIDATE_GITHUB_ACTIONS: false
+      with:
+        python-version: ${{ matrix.python-version }}
+    
