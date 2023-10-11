@@ -9,9 +9,12 @@ jobs:
       matrix:
         python-version: ["3.8", "3.9", "3.10"]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Code Checking for Python ${{ matrix.python-version }}
       uses: github/super-linter@v3
+      env:
+        DEFAULT_BRANCH: production
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         python-version: ${{ matrix.python-version }}
     
