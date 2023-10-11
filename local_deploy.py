@@ -1,7 +1,6 @@
+import random as rand
 import streamlit as st
 import tensorflow as tf
-import random as rand
-
 
 @st.cache_resource
 def load_model():
@@ -58,8 +57,8 @@ def say_something(class_val):
 file = st.file_uploader("Show me your sky!", type=["jpg", "png"])
 
 import cv2
-from PIL import Image, ImageOps
 import numpy as np
+from PIL import Image, ImageOps
 
 st.balloons()
 
