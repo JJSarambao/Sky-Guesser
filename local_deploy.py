@@ -1,9 +1,14 @@
 import random as rand
 import streamlit as st
 import tensorflow as tf
+import cv2
+import numpy as np
+from PIL import Image, ImageOps
 
 
 @st.cache_resource
+
+
 def load_model():
     model = tf.keras.models.load_model("MultiWeather.h5")
     return model
@@ -55,11 +60,7 @@ def say_something(class_val):
     return rand.choice(what_to_say[class_val])
 
 
-file = st.file_uploader("Show me your sky!", type=["jpg", "png"])
-
-import cv2
-import numpy as np
-from PIL import Image, ImageOps
+file = st.file_uploader("Show me your sky!", type = ["jpg", "png"])
 
 st.balloons()
 
@@ -78,7 +79,7 @@ if file is None:
     st.success("Wow! What a great night sk-- oh, you haven't uploaded anything.")
 else:
     image = Image.open(file)
-    st.image(image, use_column_width=True)
+    st.image(image, use_column_width = True)
     prediction = import_and_predict(image, model)
     class_names = classes
     string = f"Hmm.. looks like {class_names[np.argmax(prediction)]} sky to me! {say_something(np.argmax(prediction))}"
